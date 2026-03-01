@@ -1,13 +1,15 @@
+import bisect
 
-# bytequest
+nums = [0, 1, 0, 3, 2, 3]
 
-def lengthOfLIS(nums):
-    n = len(nums)
-    dp = [1] * n
+tails = []
 
-    for i in range(n):
-        for j in range(i):
-            if nums[j] < nums[i]:
-                dp[i] = max(dp[i], dp[j] + 1)
+for num in nums:
+    lugar_indicado = bisect.bisect_left(tails, num)
 
-    return max(dp)
+    if lugar_indicado == len(tails):
+        tails.append(num)
+    else:
+        tails[lugar_indicado] = num
+
+print(len(tails))
