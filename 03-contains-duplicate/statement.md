@@ -1,10 +1,10 @@
-# 🧩 5. Contains Duplicate / Contiene Duplicados
+# 5. Contains Duplicate / Contiene Duplicados
 
-## 🇬🇧 English Version
+## English
 
-Given an integer array `nums`, return `true` if any value appears **at least twice** in the array, and return `false` if every element is **distinct**.
+Given an integer array `nums`, return `true` if any value appears at least twice in the array, and return `false` if every element is distinct.
 
-### 🧠 Examples
+### Examples
 
 #### Example 1
 ```text
@@ -26,31 +26,31 @@ Input: nums = [1,1,1,3,3,4,3,2,4,2]
 Output: true
 ```
 
-### ⚙️ Constraints
+### Constraints
 
-- 1 <= nums.length <= 10⁵
-- -10⁹ <= nums[i] <= 10⁹
+- 1 <= nums.length <= 10^5
+- -10^9 <= nums[i] <= 10^9
 
 ---
 
-## 🇪🇸 Versión en Español
+## Espanol
 
-Dado un arreglo de enteros `nums`, devuelve `true` si algún valor aparece **al menos dos veces** en el arreglo, y devuelve `false` si todos los elementos son **distintos**.
+Dado un arreglo de enteros `nums`, devuelve `true` si algun valor aparece al menos dos veces en el arreglo, y devuelve `false` si todos los elementos son distintos.
 
-### 🧠 Ejemplos
+### Ejemplos
 
 #### Ejemplo 1
 ```text
 Entrada: nums = [1,2,3,1]
 Salida: true
-Explicación: El elemento 1 aparece en los índices 0 y 3.
+Explicacion: El elemento 1 aparece en los indices 0 y 3.
 ```
 
 #### Ejemplo 2
 ```text
 Entrada: nums = [1,2,3,4]
 Salida: false
-Explicación: Todos los elementos son distintos.
+Explicacion: Todos los elementos son distintos.
 ```
 
 #### Ejemplo 3
@@ -59,7 +59,7 @@ Entrada: nums = [1,1,1,3,3,4,3,2,4,2]
 Salida: true
 ```
 
-### ⚙️ Restricciones
+### Restricciones
 
-- 1 <= nums.length <= 10⁵
-- -10⁹ <= nums[i] <= 10⁹
+- 1 <= nums.length <= 10^5
+- -10^9 <= nums[i] <= 10^9

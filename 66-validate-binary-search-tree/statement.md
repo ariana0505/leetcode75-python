@@ -1,6 +1,6 @@
-# 🧩 98. Validate Binary Search Tree / Validar Árbol de Búsqueda Binaria
+# 66. Validate Binary Search Tree / Validar Arbol de Busqueda Binaria
 
-## 🇬🇧 English Version
+## English
 
 Given the `root` of a binary tree, determine if it is a valid binary search tree (BST).
 
@@ -9,7 +9,7 @@ A **valid BST** is defined as follows:
 - The right subtree of a node contains only nodes with keys **greater than** the node's key.
 - Both the left and right subtrees must also be binary search trees.
 
-### 🧠 Examples
+### Examples
 
 #### Example 1
 ```text
@@ -24,23 +24,23 @@ Output: false
 Explanation: The root node's value is 5 but its right child's value is 4.
 ```
 
-### ⚙️ Constraints
+### Constraints
 
-- The number of nodes in the tree is in the range [1, 10⁴].
-- -2³¹ <= Node.val <= 2³¹ - 1
+- The number of nodes in the tree is in the range [1, 10^4].
+- -2^31 <= Node.val <= 2^31 - 1
 
 ---
 
-## 🇪🇸 Versión en Español
+## Espanol
 
-Dada la raíz `root` de un árbol binario, determina si es un árbol de búsqueda binaria (BST) válido.
+Dada la raiz `root` de un arbol binario, determina si es un arbol de busqueda binaria (BST) valido.
 
-Un **BST válido** se define de la siguiente manera:
-- El subárbol izquierdo de un nodo contiene solo nodos con claves **menores que** la clave del nodo.
-- El subárbol derecho de un nodo contiene solo nodos con claves **mayores que** la clave del nodo.
-- Tanto el subárbol izquierdo como el derecho también deben ser árboles de búsqueda binaria.
+Un **BST valido** se define de la siguiente manera:
+- El subarbol izquierdo de un nodo contiene solo nodos con claves **menores que** la clave del nodo.
+- El subarbol derecho de un nodo contiene solo nodos con claves **mayores que** la clave del nodo.
+- Tanto el subarbol izquierdo como el derecho tambien deben ser arboles de busqueda binaria.
 
-### 🧠 Ejemplos
+### Ejemplos
 
 #### Ejemplo 1
 ```text
@@ -52,10 +52,10 @@ Salida: true
 ```text
 Entrada: root = [5,1,4,null,null,3,6]
 Salida: false
-Explicación: El valor del nodo raíz es 5, pero el valor de su hijo derecho es 4.
+Explicacion: El valor del nodo raiz es 5, pero el valor de su hijo derecho es 4.
 ```
 
-### ⚙️ Restricciones
+### Restricciones
 
-- El número de nodos en el árbol está en el rango [1, 10⁴].
-- -2³¹ <= Node.val <= 2³¹ - 1
+- El numero de nodos en el arbol esta en el rango [1, 10^4].
+- -2^31 <= Node.val <= 2^31 - 1

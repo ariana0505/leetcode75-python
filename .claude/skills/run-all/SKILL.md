@@ -20,10 +20,10 @@ Execute every Python solution in the repository and report results.
 Show a results table like this:
 
 ```
-✅ 01-two-sum/two_sum.py
-✅ 02-best-time-to-buy/best_time_to_buy.py
-❌ 03-contains-duplicate/contains_duplicate.py → RuntimeError: ...
-⏱️ 04-product-of-array/product_except_self.py → timeout (10s)
+[PASS] 01-two-sum/two_sum.py
+[PASS] 02-best-time-to-buy/best_time_to_buy.py
+[FAIL] 03-contains-duplicate/contains_duplicate.py -> RuntimeError: ...
+[TIME] 04-product-of-array/product_except_self.py -> timeout (10s)
 ```
 
 Then a summary line:

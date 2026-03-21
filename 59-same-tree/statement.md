@@ -1,26 +1,31 @@
+# 59. Same Tree / Mismo Arbol
+
 ## English
 
-100. Same Tree
-
-Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+Given the roots of two binary trees `p` and `q`, write a function to check if they are the same or not.
 
 Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
 
-Example 1:
+### Examples
 
-Input: p = [1,2,3], q = [1,2,3]  
+#### Example 1
+```text
+Input: p = [1,2,3], q = [1,2,3]
 Output: true
+```
 
+---
 
-## Español
+## Espanol
 
-100. Mismo Árbol
+Dadas las raices de dos arboles binarios `p` y `q`, escribe una funcion para verificar si son iguales o no.
 
-Dadas las raíces de dos árboles binarios p y q, escribe una función para verificar si son iguales o no.
+Dos arboles binarios se consideran iguales si son estructuralmente identicos y los nodos tienen el mismo valor.
 
-Dos árboles binarios se consideran iguales si son estructuralmente idénticos y los nodos tienen el mismo valor.
+### Ejemplos
 
-Ejemplo 1:
-
-Entrada: p = [1,2,3], q = [1,2,3]  
+#### Ejemplo 1
+```text
+Entrada: p = [1,2,3], q = [1,2,3]
 Salida: true
+```

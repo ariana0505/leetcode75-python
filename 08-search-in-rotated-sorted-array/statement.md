@@ -1,6 +1,6 @@
-# 🧩 8. Search in Rotated Sorted Array / Buscar en un Arreglo Ordenado Rotado
+# 8. Search in Rotated Sorted Array / Buscar en un Arreglo Ordenado Rotado
 
-## 🇬🇧 English Version
+## English
 
 Given an integer array `nums` sorted in ascending order (with distinct values).
 
@@ -14,7 +14,7 @@ Given the array `nums` after the possible rotation and an integer `target`, retu
 
 You must write an algorithm with `O(log n)` runtime complexity.
 
-### 🧠 Examples
+### Examples
 
 #### Example 1
 ```text
@@ -34,31 +34,31 @@ Input: nums = [1], target = 0
 Output: -1
 ```
 
-### ⚙️ Constraints
+### Constraints
 
-- 1 <= `nums.length` <= 5000
-- -10^4 <= `nums[i]` <= 10^4
-- All values of `nums` are unique
-- `nums` is an ascending array that is possibly rotated
-- -10^4 <= `target` <= 10^4
+- 1 <= nums.length <= 5000
+- -10^4 <= nums[i] <= 10^4
+- All values of nums are unique
+- nums is an ascending array that is possibly rotated
+- -10^4 <= target <= 10^4
 
 ---
 
-## 🇪🇸 Versión en Español
+## Espanol
 
 Existe un arreglo de enteros `nums` ordenado en forma ascendente (con valores distintos).
 
-Antes de ser pasado a tu función, `nums` pudo haber sido rotado en un índice desconocido `k` (1 <= k < nums.length) de manera que quede:
+Antes de ser pasado a tu funcion, `nums` pudo haber sido rotado en un indice desconocido `k` (1 <= k < nums.length) de manera que quede:
 
 `[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]` (indexado desde 0).
 
 Por ejemplo, `[0,1,2,4,5,6,7]` puede rotarse 3 posiciones y convertirse en `[4,5,6,7,0,1,2]`.
 
-Dado el arreglo `nums` después de la posible rotación y un entero `target`, devuelve el índice de `target` si está en `nums`, o `-1` si no se encuentra.
+Dado el arreglo `nums` despues de la posible rotacion y un entero `target`, devuelve el indice de `target` si esta en `nums`, o `-1` si no se encuentra.
 
 Debes escribir un algoritmo con complejidad `O(log n)`.
 
-### 🧠 Ejemplos
+### Ejemplos
 
 #### Ejemplo 1
 ```text
@@ -78,10 +78,10 @@ Entrada: nums = [1], target = 0
 Salida: -1
 ```
 
-### ⚙️ Restricciones
+### Restricciones
 
-- 1 <= `nums.length` <= 5000
-- -10^4 <= `nums[i]` <= 10^4
-- Todos los valores de `nums` son únicos
-- `nums` es un arreglo ascendente que pudo haber sido rotado
-- -10^4 <= `target` <= 10^4
+- 1 <= nums.length <= 5000
+- -10^4 <= nums[i] <= 10^4
+- Todos los valores de nums son unicos
+- nums es un arreglo ascendente que pudo haber sido rotado
+- -10^4 <= target <= 10^4

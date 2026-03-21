@@ -1,15 +1,15 @@
-# 🧩 3. Best Time to Buy and Sell Stock / Mejor Momento para Comprar y Vender Acciones
+# 3. Best Time to Buy and Sell Stock / Mejor Momento para Comprar y Vender Acciones
 
-## 🇬🇧 English Version
+## English
 
 You are given an array `prices` where `prices[i]` is the price of a given stock on the *i-th* day.
 
-You want to **maximize your profit** by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
 
-Return the **maximum profit** you can achieve from this transaction.  
+Return the maximum profit you can achieve from this transaction.
 If you cannot achieve any profit, return `0`.
 
-### 🧠 Examples
+### Examples
 
 #### Example 1
 ```text
@@ -26,40 +26,40 @@ Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0.
 ```
 
-### ⚙️ Constraints
+### Constraints
 
-- 1 <= prices.length <= 10⁵
-- 0 <= prices[i] <= 10⁴
+- 1 <= prices.length <= 10^5
+- 0 <= prices[i] <= 10^4
 
 ---
 
-## 🇪🇸 Versión en Español
+## Espanol
 
-Se te da un arreglo `prices` donde `prices[i]` es el precio de una acción en el día *i*.
+Se te da un arreglo `prices` donde `prices[i]` es el precio de una accion en el dia *i*.
 
-Deseas **maximizar tu ganancia** eligiendo un día para comprar una acción y un día diferente en el futuro para venderla.
+Deseas maximizar tu ganancia eligiendo un dia para comprar una accion y un dia diferente en el futuro para venderla.
 
-Devuelve la **máxima ganancia** que puedes obtener de esta transacción.  
+Devuelve la maxima ganancia que puedes obtener de esta transaccion.
 Si no puedes obtener ninguna ganancia, devuelve `0`.
 
-### 🧠 Ejemplos
+### Ejemplos
 
 #### Ejemplo 1
 ```text
 Entrada: prices = [7,1,5,3,6,4]
 Salida: 5
-Explicación: Compra en el día 2 (precio = 1) y vende en el día 5 (precio = 6), ganancia = 6 - 1 = 5.
-Nota que no está permitido comprar en el día 2 y vender en el día 1, ya que debes comprar antes de vender.
+Explicacion: Compra en el dia 2 (precio = 1) y vende en el dia 5 (precio = 6), ganancia = 6 - 1 = 5.
+Nota que no esta permitido comprar en el dia 2 y vender en el dia 1, ya que debes comprar antes de vender.
 ```
 
 #### Ejemplo 2
 ```text
 Entrada: prices = [7,6,4,3,1]
 Salida: 0
-Explicación: En este caso, no se realiza ninguna transacción y la ganancia máxima es 0.
+Explicacion: En este caso, no se realiza ninguna transaccion y la ganancia maxima es 0.
 ```
 
-### ⚙️ Restricciones
+### Restricciones
 
-- 1 <= prices.length <= 10⁵
-- 0 <= prices[i] <= 10⁴
+- 1 <= prices.length <= 10^5
+- 0 <= prices[i] <= 10^4
