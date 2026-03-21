@@ -4,6 +4,8 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 
 **Progress:** 38 / 75
 
+**Live site:** [ariana0505.github.io/leetcode75](https://ariana0505.github.io/leetcode75) — browse problems with syntax-highlighted code, bilingual statements (EN/ES), and keyboard navigation.
+
 ## Problems
 
 ### Array & Hashing
@@ -96,3 +98,18 @@ python3 01-two-sum/two_sum.py
 ```
 
 Each solution is a standalone script with inline test cases.
+
+## Site
+
+The companion website is built with [Astro](https://astro.build/) and lives in the [`site/`](site/) directory. It reads directly from the solution files and `statement.md` in each problem directory.
+
+```bash
+cd site
+npm install
+npm run dev      # local dev server at localhost:4321
+npm run build    # static build to site/dist/
+```
+
+**Features:** dark terminal theme, syntax-highlighted Python code, bilingual problem statements (EN/ES), keyboard shortcuts (`h`/`l` or arrows to navigate, `?` for help).
+
+Deployed automatically to GitHub Pages via GitHub Actions on push to `main`.
