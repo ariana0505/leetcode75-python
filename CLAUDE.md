@@ -32,3 +32,7 @@ Solutions use either a `class Solution` pattern with a `__main__` block, or run 
 - Comments are typically in Spanish
 - Problem numbering follows a custom order (not LeetCode problem IDs), corresponding to a curated 75-problem list
 - No test framework is used; solutions include inline examples run via `__main__`
+
+## Behavior
+
+- Always use available skills (e.g., `/commit`, `/simplify`) instead of performing the equivalent steps manually. If a skill matches the task, invoke it via the Skill tool first.
