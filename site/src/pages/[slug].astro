@@ -1,0 +1,146 @@
+---
+import { Code } from 'astro:components';
+import { marked } from 'marked';
+import Base from '../layouts/Base.astro';
+import { getAllProblems } from '../data/problems';
+import type { Problem } from '../data/problems';
+
+export function getStaticPaths() {
+  const problems = getAllProblems();
+  return problems.map(problem => ({
+    params: { slug: problem.slug },
+    props: { problem },
+  }));
+}
+
+interface Props {
+  problem: Problem;
+}
+
+const { problem } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const statementEnHtml = problem.statementEn
+  ? await marked.parse(problem.statementEn)
+  : null;
+
+const statementEsHtml = problem.statementEs
+  ? await marked.parse(problem.statementEs)
+  : null;
+---
+
+<Base title={`${problem.number}. ${problem.title}`}>
+  <div class="problem-header">
+    <span class="category-badge">{problem.category}</span>
+    <h1>{problem.number}. {problem.title}</h1>
+  </div>
+
+  <div class="problem-content">
+    <div class="statement-col">
+      {statementEnHtml ? (
+        <div data-lang="en">
+          <Fragment set:html={statementEnHtml} />
+        </div>
+      ) : null}
+      {statementEsHtml ? (
+        <div data-lang="es" style="display:none">
+          <Fragment set:html={statementEsHtml} />
+        </div>
+      ) : null}
+      {!statementEnHtml && !statementEsHtml && (
+        <p class="placeholder">// statement coming soon</p>
+      )}
+    </div>
+
+    <div class="terminal-window">
+      {problem.solutionCode && problem.solutionFile ? (
+        <>
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <span class="terminal-title">{problem.solutionFile}</span>
+          </div>
+          <div class="terminal-body">
+            <Code code={problem.solutionCode} lang="python" theme="github-dark" />
+          </div>
+        </>
+      ) : (
+        <>
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <span class="terminal-title">solution.py</span>
+          </div>
+          <p class="placeholder">// solution coming soon</p>
+        </>
+      )}
+    </div>
+  </div>
+
+  <nav class="problem-nav" data-prev={problem.prevSlug ? `${base}/${problem.prevSlug}/` : ''} data-next={problem.nextSlug ? `${base}/${problem.nextSlug}/` : ''} data-index={base}>
+    {problem.prevSlug ? (
+      <a href={`${base}/${problem.prevSlug}/`}>&larr; prev</a>
+    ) : (
+      <span class="nav-spacer" />
+    )}
+    {problem.nextSlug ? (
+      <a href={`${base}/${problem.nextSlug}/`}>next &rarr;</a>
+    ) : (
+      <span class="nav-spacer" />
+    )}
+  </nav>
+
+  <div class="kbd-help" id="kbd-help">
+    <div class="kbd-help-inner">
+      <div class="kbd-help-title">Keyboard shortcuts</div>
+      <div class="kbd-row"><kbd>&larr;</kbd> <kbd>h</kbd> <span>Previous problem</span></div>
+      <div class="kbd-row"><kbd>&rarr;</kbd> <kbd>l</kbd> <span>Next problem</span></div>
+      <div class="kbd-row"><kbd>Esc</kbd> <span>Back to index</span></div>
+      <div class="kbd-row"><kbd>?</kbd> <span>Toggle this help</span></div>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function() {
+      var nav = document.querySelector('.problem-nav');
+      if (!nav) return;
+
+      var prevUrl = nav.getAttribute('data-prev');
+      var nextUrl = nav.getAttribute('data-next');
+      var indexUrl = nav.getAttribute('data-index');
+      var helpEl = document.getElementById('kbd-help');
+
+      document.addEventListener('keydown', function(e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+        switch (e.key) {
+          case 'ArrowLeft':
+          case 'h':
+            if (prevUrl) window.location.href = prevUrl;
+            break;
+          case 'ArrowRight':
+          case 'l':
+            if (nextUrl) window.location.href = nextUrl;
+            break;
+          case 'Escape':
+            if (helpEl.classList.contains('visible')) {
+              helpEl.classList.remove('visible');
+            } else if (indexUrl) {
+              window.location.href = indexUrl;
+            }
+            break;
+          case '?':
+            helpEl.classList.toggle('visible');
+            break;
+        }
+      });
+    })();
+  </script>
+</Base>

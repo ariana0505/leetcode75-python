@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCategories, getAllProblems } from '../data/problems';
+
+const categories = getCategories();
+const allProblems = getAllProblems();
+const solved = allProblems.filter(p => p.solutionCode !== null).length;
+const total = allProblems.length;
+const base = import.meta.env.BASE_URL;
+
+const filledBlocks = Math.round((solved / total) * 20);
+const emptyBlocks = 20 - filledBlocks;
+---
+
+<Base title="LeetCode 75 — Python Solutions" scrollable>
+  <div class="index-container">
+    <h1>~/leetcode75</h1>
+    <p class="progress">Python Solutions — {solved} / {total} completed</p>
+
+    {categories.map(category => (
+      <section class="category">
+        <h2>{category.name}</h2>
+        <ul>
+          {category.problems.map(problem => (
+            <li>
+              <span class="prompt">&gt;</span>
+              <span class="problem-number">{problem.number}</span>
+              <a href={`${base}/${problem.slug}/`}>{problem.title}</a>
+              {!problem.solutionCode && <span class="wip"> (wip)</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <div class="progress-bar">
+      <span class="filled">{'█'.repeat(filledBlocks)}</span>{'░'.repeat(emptyBlocks)} {solved}/{total}
+    </div>
+  </div>
+</Base>

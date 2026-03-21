@@ -20,5 +20,10 @@ Thumbs.db
 # Claude Code (local settings)
 .claude/settings.local.json
 
+# Site
+site/node_modules/
+site/dist/
+site/.astro/
+
 # Project
 /practice/

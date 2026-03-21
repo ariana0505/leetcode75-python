@@ -1,0 +1,13 @@
+{
+  "name": "leetcode75-site",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.7.10",
+    "marked": "^15.0.7"
+  }
+}
