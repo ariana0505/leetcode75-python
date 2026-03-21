@@ -4,7 +4,7 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 
 **Progress:** 38 / 75
 
-**Live site:** [ariana0505.github.io/leetcode75](https://ariana0505.github.io/leetcode75) — browse problems with syntax-highlighted code, bilingual statements (EN/ES), and keyboard navigation.
+**Live site:** [ariana0505.github.io/leetcode75-python](https://ariana0505.github.io/leetcode75-python) — browse problems with syntax-highlighted code, bilingual statements (EN/ES), and keyboard navigation.
 
 ## Problems
 
