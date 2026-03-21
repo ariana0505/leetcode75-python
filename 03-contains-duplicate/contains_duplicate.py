@@ -1,17 +1,17 @@
-from typing import List
+from typing import Dict, List
 
-# my way of solving
+# Hash map approach
 def containsDuplicateWithHashMap(nums: List[int]) -> bool:
-    hash_map = {}
+    hash_map: Dict[int, int] = {}
     for i, v in enumerate(nums):
         if v in hash_map:
             return True
         hash_map[v] = i
     return False
 
-#the most optimal and fastest way
+# Optimal approach using a set (faster lookups, no index storage)
 def containsDuplicateWithSet(nums: List[int]) -> bool:
-    hashset = set()
+    hashset: set[int] = set()
     for n in nums:
         if n in hashset:
             return True

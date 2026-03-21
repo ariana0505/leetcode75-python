@@ -1,18 +1,19 @@
-nums = [1,3,7,9,12,14]
-l ,r = 0 , len(nums) - 1
-target = 26
-while l < r :
-    suma = nums[l] + nums[r]
-    if suma == target:
-        print([l + 1 , r + 1])
+from typing import List
+
+nums: List[int] = [1,3,7,9,12,14]
+l: int
+r: int
+l, r = 0, len(nums) - 1
+target: int = 26
+while l < r:
+    total: int = nums[l] + nums[r]
+    if total == target:
+        print([l + 1, r + 1])
         break
-    if suma < target:
+    if total < target:
         l += 1
     else:
         r -= 1
-# <arreglado>
-# Faltaba un break despues de encontrar el resultado, lo que causaba que el loop
-# siguiera iterando innecesariamente y pudiera imprimir resultados incorrectos.
-#
-# Missing a break after finding the result, causing the loop to keep iterating
-# unnecessarily and potentially printing incorrect results.
+# <fix>
+# A break was missing after finding the result, which caused the loop to keep
+# iterating unnecessarily and potentially printing incorrect results.

@@ -1,14 +1,18 @@
-days = [5, 7, 2, 1, 7]
-ganancia = 0
-compra, venta = 0, 1
+from typing import List
 
-while venta < len(days):
-    if days[venta] > days[compra]:  
-        nueva_ganancia = days[venta] - days[compra]
-        ganancia = max(ganancia, nueva_ganancia)
+days: List[int] = [5, 7, 2, 1, 7]
+profit: int = 0
+buy: int
+sell: int
+buy, sell = 0, 1
+
+while sell < len(days):
+    if days[sell] > days[buy]:
+        new_profit: int = days[sell] - days[buy]
+        profit = max(profit, new_profit)
     else:
-        compra = venta  
+        buy = sell  # Found a lower price, update buy day
 
-    venta += 1
+    sell += 1
 
-print(ganancia)
+print(profit)

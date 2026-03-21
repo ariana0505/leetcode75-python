@@ -1,18 +1,20 @@
-# rob1: máximo dinero robado hasta la casa i-2
-# rob2: máximo dinero robado hasta la casa i-1
-rob1 = 0
-rob2 = 0
-casas = [2,7,9,3,1]
+from typing import List
 
-for dinero in casas:
-    # Opción 1: robar esta casa → n + rob1
-    # Opción 2: no robar esta casa → rob2
-    temp = max(dinero + rob1, rob2)
+# rob1: max money robbed up to house i-2
+# rob2: max money robbed up to house i-1
+rob1: int = 0
+rob2: int = 0
+houses: List[int] = [2, 7, 9, 3, 1]
 
-    # Desplazamos los estados para la siguiente iteración
-    rob1 = rob2      # lo que era i-1 ahora será i-2
-    rob2 = temp      # el mejor resultado actual
+for money in houses:
+    # Option 1: rob this house -> money + rob1
+    # Option 2: skip this house -> rob2
+    temp: int = max(money + rob1, rob2)
 
-# rob2 contiene el máximo dinero que se puede robar
-resultado = rob2
-print(resultado)
+    # Shift states for the next iteration
+    rob1 = rob2      # previous i-1 becomes i-2
+    rob2 = temp      # current best result
+
+# rob2 holds the maximum money that can be robbed
+result: int = rob2
+print(result)

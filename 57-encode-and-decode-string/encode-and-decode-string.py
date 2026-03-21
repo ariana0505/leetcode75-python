@@ -1,28 +1,31 @@
-def encode(strs):
-    res = ""
-    for palabra in strs:
-        res += str(len(palabra)) + "#" + palabra
+from typing import List
+
+
+def encode(strs: List[str]) -> str:
+    res: str = ""
+    for word in strs:
+        res += str(len(word)) + "#" + word
     return res
 
 
-def decode(strg):
-    res = []
-    i = 0
+def decode(strg: str) -> List[str]:
+    res: List[str] = []
+    i: int = 0
 
     while i < len(strg):
         j = i
 
-        # Buscar el #
+        # Find the '#' delimiter
         while strg[j] != "#":
             j += 1
 
-        # Obtener longitud
-        largo = int(strg[i:j])
+        # Get the length of the next word
+        length: int = int(strg[i:j])
 
-        # Extraer palabra
-        res.append(strg[j + 1 : j + 1 + largo])
+        # Extract the word
+        res.append(strg[j + 1 : j + 1 + length])
 
-        # Mover puntero
-        i = j + 1 + largo
+        # Advance the pointer past the current word
+        i = j + 1 + length
 
     return res

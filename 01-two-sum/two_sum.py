@@ -1,18 +1,18 @@
 from typing import List
 
 class Solution:
-    def two_sum(self, nums: List[int], target:int) -> List[int]:
-        hash_map = {}  # almacena num -> índice
+    def two_sum(self, nums: List[int], target: int) -> List[int]:
+        hash_map: dict[int, int] = {}  # stores num -> index
 
         for i, num in enumerate(nums):
-            complement = target - num  # lo que falta para llegar al target 7
+            complement: int = target - num  # value needed to reach target
 
             if complement in hash_map:
-                # Si ya lo vimos, devolvemos los índices
+                # Already seen the complement, return both indices
                 return [hash_map[complement], i]
 
-            # Si no, guardamos este número y su índice
-            hash_map[num] = i 
+            # Otherwise, store this number and its index
+            hash_map[num] = i
 
 
 if __name__ == "__main__":

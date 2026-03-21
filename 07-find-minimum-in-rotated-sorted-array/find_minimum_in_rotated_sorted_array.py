@@ -1,26 +1,21 @@
 from typing import List
 
 def findMin(nums: List[int]) -> int:
+    left: int = 0
+    right: int = len(nums) - 1
 
-    left, right = 0, len(nums) - 1
-    
-
+    # Already sorted, no rotation
     if nums[left] < nums[right]:
         return nums[left]
 
-
     while left < right:
-        print(f"Left {left}")
-        print(f"Right {right}")
-
-        mid = (left + right) // 2
-        print(f"MId {mid}")
+        mid: int = (left + right) // 2
 
         if nums[mid] > nums[right]:
-            print(f"CASO 1 {nums[mid]} - {nums[right]}")
+            # Minimum is in the right half
             left = mid + 1
         else:
-            print(f"CASO 2 {nums[mid]} - {nums[right]}")
+            # Minimum is in the left half (including mid)
             right = mid
 
     return nums[left]

@@ -1,17 +1,15 @@
-nums = [-2,1,-3,4,-1,2,1,-5,4]
-sumaMaxima = nums[0]
-sumaActual = nums[0]
+from typing import List
+
+nums: List[int] = [-2,1,-3,4,-1,2,1,-5,4]
+max_sum: int = nums[0]
+current_sum: int = nums[0]
 
 for i in range(1, len(nums)):
-    sumaActual = max(nums[i], sumaActual + nums[i])
-    sumaMaxima = max(sumaMaxima, sumaActual)
+    current_sum = max(nums[i], current_sum + nums[i])
+    max_sum = max(max_sum, current_sum)
 
-print(sumaMaxima)
-# <arreglado>
-# Se reseteaba sumaActual a 0 cuando era negativa, lo que causaba que con arrays
-# totalmente negativos (ej: [-3,-2,-5,-1]) devolviera 0 en vez del mayor negativo (-1).
-# Se corrigio usando Kadane's: sumaActual = max(nums[i], sumaActual + nums[i])
-#
-# The old code reset sumaActual to 0 when negative, so for all-negative arrays
+print(max_sum)
+# <fix>
+# The old code reset current_sum to 0 when negative, so for all-negative arrays
 # (e.g. [-3,-2,-5,-1]) it returned 0 instead of the largest negative (-1).
-# Fixed using Kadane's algorithm: sumaActual = max(nums[i], sumaActual + nums[i])
+# Fixed using Kadane's algorithm: current_sum = max(nums[i], current_sum + nums[i])

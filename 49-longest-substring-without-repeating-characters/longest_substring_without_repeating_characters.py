@@ -1,14 +1,16 @@
-s = "abcabcbb"
-caracteres_vistos = {}
-maximo_subtring = 0
-l = 0
+from typing import Dict
 
-for r , caracter in enumerate(s):
-    if caracter in caracteres_vistos and caracteres_vistos[caracter]>= l:
-        l = caracteres_vistos[caracter] + 1
-    
-    caracteres_vistos[caracter] = r
+s: str = "abcabcbb"
+seen_chars: Dict[str, int] = {}
+max_substring: int = 0
+l: int = 0
 
-    maximo_subtring = max(maximo_subtring, r - l + 1)
+for r, char in enumerate(s):
+    if char in seen_chars and seen_chars[char] >= l:
+        l = seen_chars[char] + 1
 
-print(maximo_subtring)
+    seen_chars[char] = r
+
+    max_substring = max(max_substring, r - l + 1)
+
+print(max_substring)

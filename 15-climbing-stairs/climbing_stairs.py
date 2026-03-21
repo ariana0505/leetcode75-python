@@ -1,17 +1,12 @@
-n = 8 
-uno = 1
-dos = 1
+# Climbing stairs: count distinct ways to reach step n (Fibonacci approach)
+n: int = 8
+one: int = 1
+two: int = 1
 
-# Repetimos el proceso n veces
+# Iterate n times, shifting the two-variable window forward
 for i in range(n):
-    # Guardamos el valor actual de 'uno'
-    temp = uno
+    temp: int = one
+    one = one + two
+    two = temp
 
-    # Sumamos los dos números
-    uno = uno + dos
-
-    # Actualizamos 'dos' con el valor anterior
-    dos = temp
-
-# Mostramos el último valor guardado
 print(temp)

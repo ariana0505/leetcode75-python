@@ -1,15 +1,18 @@
 import bisect
+from typing import List
 
-nums = [0, 1, 0, 3, 2, 3]
+# Find the length of the longest increasing subsequence using patience sorting
+nums: List[int] = [0, 1, 0, 3, 2, 3]
 
-tails = []
+tails: List[int] = []
 
 for num in nums:
-    lugar_indicado = bisect.bisect_left(tails, num)
+    # Find the insertion point for num in the sorted tails array
+    pos: int = bisect.bisect_left(tails, num)
 
-    if lugar_indicado == len(tails):
+    if pos == len(tails):
         tails.append(num)
     else:
-        tails[lugar_indicado] = num
+        tails[pos] = num
 
 print(len(tails))

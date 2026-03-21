@@ -2,17 +2,17 @@ from typing import List
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        answer = [1] * n  # resultado final
+        n: int = len(nums)
+        answer: List[int] = [1] * n  # final result
 
-        # Paso 1️⃣: calcular productos prefix (izquierda → derecha)
-        prefix = 1
+        # Step 1: compute prefix products (left to right)
+        prefix: int = 1
         for i in range(n):
             answer[i] = prefix
             prefix *= nums[i]
 
-        # Paso 2️⃣: calcular productos suffix (derecha → izquierda)
-        suffix = 1
+        # Step 2: compute suffix products (right to left)
+        suffix: int = 1
         for i in range(n - 1, -1, -1):
             answer[i] *= suffix
             suffix *= nums[i]
