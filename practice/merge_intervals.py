@@ -1,11 +1,13 @@
 intervals = [[1,3],[2,6],[8,10],[15,18]]
+
 intervals.sort()
-result = [intervals[0]]
+resultado = [intervals[0]]
 
-for start, end in intervals[1:]:
-    if result[-1][1] >= start:
-        result[-1][1] = max(result[-1][1], end)
+for i in range(1,len(intervals)):
+    if resultado[-1][1] >= intervals[i][0]:
+        resultado[-1][1] = max(resultado[-1][1], intervals[i][1])
     else:
-        result.append([start, end])
+        resultado.append(intervals[i])
 
-print(result)
+print(resultado)
+
