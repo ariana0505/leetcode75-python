@@ -15,3 +15,4 @@ def isSame(root,subroot):
     return ( isSame(root.izquierda, subroot.izquierda) and  isSame(root.derecha ,  subroot.derecha))
 
 print(isSame(subtree, prueba))
+
