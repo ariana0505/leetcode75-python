@@ -1,12 +1,11 @@
-letras = "abcdabcbb"
+s = "abcabcbb"
 l = 0
-resul = ""
-maxi = 0
-for r in range(len(letras)):
-    while letras[r] in resul:
-        l += 1
-        resul = letras[l:r]
-    resul = letras[l:r+1]
-    maxi = max(len(resul), maxi)
+diccionario = {}
+maxsun = 0
+for r in range(len(s)):
+    if s[r] in diccionario and diccionario[s[r]] >= l:
+        l = diccionario[s[r]] + 1
+    diccionario[s[r]] = r
+    maxsun = max(maxsun, r - l + 1)
 
-print(maxi)
+print(maxsun)
