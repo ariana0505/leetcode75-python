@@ -1,15 +1,13 @@
-coins = [1,2,5]
-amount = 11
+coins = [1,2,5] 
+amount = 11 
 
-dp = [float('inf')]  * (amount + 1)
-dp[0]  = 0
+dp = [float('inf')] * (amount + 1)
+dp[0] = 0
 
-for coin in  coins :
-    for amout_currect in  range(coin, amount + 1):
-        dp[amout_currect] = min(dp[amout_currect], (dp[amout_currect - coin]) + 1)
-
-
-if dp[amount] ==  float('inf'):
+for  coin in coins:
+    for amoun_current in  range(coin, amount + 1):
+        dp[amoun_current] =  min(dp[amoun_current], dp[amoun_current  - coin]  +   1)
+if dp[amount] == float('inf'):
     print(-1)
-else:
+else :
     print(dp[amount])
