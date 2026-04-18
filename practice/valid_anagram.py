@@ -1,4 +1,5 @@
-from collections import Counter
+from  collections import Counter
+
 s = "anagram"
 t = "nagaram"
 
