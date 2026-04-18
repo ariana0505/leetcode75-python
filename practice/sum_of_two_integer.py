@@ -1,7 +1,7 @@
-num1  = 5
-num2  = 4
-while  num2 != 0 :
-    temp =  (num1 & num2)  << 1
-    num1 =  num2  ^  num1
-    num2 = temp
-print(num1)
+n1 =  4
+n2 = 3
+
+while n2 :
+    temp = (n1 & n2) << 1
+    n1  =  n1  ^ n2
+    n2 = temp
