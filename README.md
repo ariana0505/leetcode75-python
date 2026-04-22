@@ -2,7 +2,7 @@
 
 Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-75/) problem list in Python 3.
 
-**Progress:** 44 / 75
+**Progress:** 45 / 75
 
 **Live site:** [ariana0505.github.io/leetcode75-python](https://ariana0505.github.io/leetcode75-python) — browse problems with syntax-highlighted code, bilingual statements (EN/ES), and keyboard navigation.
 
@@ -63,6 +63,7 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 | 65 | Construct Binary Tree from Preorder and Inorder Traversal | [construct_binary_tree_from_preorder_and_inorder_traversal.py](65-construct-binary-tree-from-preorder-and-inorder-traversal/) |
 | 66 | Validate Binary Search Tree | [validate_bst.py](66-validate-binary-search-tree/) |
 | 67 | Kth Smallest Element in a BST | [kth_smallest_element_in_a_bst.py](67-kth-smallest-element-in-a-bst/) |
+| 68 | Lowest Common Ancestor of a BST | [lowest_common_ancestor_of_a_bst.py](68-lowest-common-ancestor-of-a-bst/) |
 
 ### Dynamic Programming
 
