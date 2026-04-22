@@ -2,7 +2,7 @@
 
 Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-75/) problem list in Python 3.
 
-**Progress:** 41 / 75
+**Progress:** 42 / 75
 
 **Live site:** [ariana0505.github.io/leetcode75-python](https://ariana0505.github.io/leetcode75-python) — browse problems with syntax-highlighted code, bilingual statements (EN/ES), and keyboard navigation.
 
@@ -58,6 +58,7 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 |----|---------|----------|
 | 59 | Same Tree | [same_tree.py](59-same-tree/) |
 | 60 | Invert Binary Tree | [invert_tree.py](60-invert-binary-tree/) |
+| 61 | Binary Tree Level Order Traversal | [binary_tree_level_order_traversal.py](61-binary-tree-level-order-traversal/) |
 | 64 | Subtree of Another Tree | [subtree.py](64-subtree-of-another-tree/) |
 | 66 | Validate Binary Search Tree | [validate_bst.py](66-validate-binary-search-tree/) |
 
