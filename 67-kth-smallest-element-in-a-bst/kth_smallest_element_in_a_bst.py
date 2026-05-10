@@ -11,25 +11,30 @@ class TreeNode:
 #   1   4
 #    \
 #     2
-node1 = TreeNode(1)
-node2 = TreeNode(2)
-node3 = TreeNode(3)
-node4 = TreeNode(4)
+node1 = TreeNode(2)
+node2 = TreeNode(4)
+node3 = TreeNode(10)
+node4 = TreeNode(6)
 
 node1.right = node2
 node3.left = node1
 node3.right = node4
 
-root = node3
+raiz = node3
 k = 1
-r = []
+n = 0 # numero de elementos que visitamos
+stack = []  
+cur = node3
 
-def smallest_element(nodo: TreeNode):
-    if not nodo:
-        return
-    smallest_element(nodo.left)   # 1. va al más pequeño primero
-    r.append(nodo.val)            # 2. agrega el nodo actual
-    smallest_element(nodo.right)  # 3. luego los más grandes
-
-smallest_element(root)
-print(r[k - 1])
+while cur or  stack:
+    while cur:
+        stack.append(cur)
+        cur = cur.left
+    
+    cur = stack.pop()
+    n +=  1
+    if  k  == n:
+        print(cur.val)
+        break
+    cur = cur.right
+    
