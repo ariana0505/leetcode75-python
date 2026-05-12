@@ -15,28 +15,20 @@ node3.next =  node4
 fast = node
 slow = node
 
-n = 3
-resul = []
+n = 2
 
-for _  in range(n):
-    if  fast != None:
-        fast = fast.next
-    else:
-        print(resul)
+for _ in  range(n):
+    fast  =  fast.next
 
-resul.append(slow.val)  # agregamos el primer nodo antes de mover
+while not fast.next == None:
+    fast =  fast.next
+    slow = slow.next
 
-while slow.next != None:
-    if fast != None:
-        slow = slow.next
-        fast = fast.next
-        if fast != None:       # solo agrega si NO es el nodo a eliminar
-            resul.append(slow.val)
-    else:
-        slow = slow.next       # salta el nodo eliminado (antes era .next.next, saltaba de mas)
-        while slow != None:    # agrega los nodos restantes
-            resul.append(slow.val)
-            slow = slow.next
-        break
+slow.next   =  slow.next.next
 
-print(resul)
+cur  = node
+
+while cur:
+    print(cur.val , end="->")
+    cur  = cur.next
+    
