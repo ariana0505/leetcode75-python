@@ -11,20 +11,16 @@ class TreeNode:
 #   1   4
 #    \
 #     2
-node1 = TreeNode(2)
-node2 = TreeNode(4)
-node3 = TreeNode(10)
-node4 = TreeNode(6)
-
-node1.right = node2
-node3.left = node1
-node3.right = node4
+node2 = TreeNode(2)
+node1 = TreeNode(1, right=node2)
+node4 = TreeNode(4)
+node3 = TreeNode(3, left=node1, right=node4)
 
 raiz = node3
 k = 1
 n = 0 # numero de elementos que visitamos
 stack = []  
-cur = node3
+cur = raiz
 
 while cur or  stack:
     while cur:
