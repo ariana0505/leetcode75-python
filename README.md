@@ -2,7 +2,7 @@
 
 Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-75/) problem list in Python 3.
 
-**Progress:** 46 / 75
+**Progress:** 46 / 75 — 🚧 marks problems with the statement ready but the solution still pending.
 
 **Live site:** [ariana0505.github.io/leetcode75-python](https://ariana0505.github.io/leetcode75-python) — browse problems with syntax-highlighted code, bilingual statements (EN/ES), and keyboard navigation.
 
@@ -37,6 +37,12 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 | 50 | Longest Repeating Character Replacement | [longest_repeating.py](50-longest-repeating-character-replacement/) |
 | 51 | Minimum Window Substring | [min_window.py](51-minimum-window-substring/) |
 
+### String
+
+| #  | Problem | Solution |
+|----|---------|----------|
+| 54 | Valid Palindrome | 🚧 Pending |
+
 ### Binary Search
 
 | #  | Problem | Solution |
@@ -48,9 +54,16 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 
 | #  | Problem | Solution |
 |----|---------|----------|
+| 39 | Reverse Linked List | 🚧 Pending |
 | 40 | Linked List Cycle | [linked_list_cycle.py](40-linked-list-cycle/) |
 | 41 | Merge Two Sorted Lists | [merge_lists.py](41-merge-two-sorted-lists/) |
 | 42 | Remove Nth Node From End of List | [remove_nth_node_from_end_of_list.py](42-remove-nth-node-from-end-of-list/) |
+
+### Stack
+
+| #  | Problem | Solution |
+|----|---------|----------|
+| 53 | Valid Parentheses | 🚧 Pending |
 
 ### Tree
 
@@ -58,7 +71,8 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 |----|---------|----------|
 | 59 | Same Tree | [same_tree.py](59-same-tree/) |
 | 60 | Invert Binary Tree | [invert_tree.py](60-invert-binary-tree/) |
-| 61 | Binary Tree Level Order Traversal | [binary_tree_level_order_traversal.py](61-binary-tree-level-order-traversal/) |
+| 61 | Binary Tree Maximum Path Sum | 🚧 Pending |
+| 62 | Binary Tree Level Order Traversal | [binary_tree_level_order_traversal.py](62-binary-tree-level-order-traversal/) |
 | 64 | Subtree of Another Tree | [subtree.py](64-subtree-of-another-tree/) |
 | 65 | Construct Binary Tree from Preorder and Inorder Traversal | [construct_binary_tree_from_preorder_and_inorder_traversal.py](65-construct-binary-tree-from-preorder-and-inorder-traversal/) |
 | 66 | Validate Binary Search Tree | [validate_bst.py](66-validate-binary-search-tree/) |
@@ -70,6 +84,13 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 | #  | Problem | Solution |
 |----|---------|----------|
 | 69 | Implement Trie (Prefix Tree) | [implement_trie.py](69-implement-trie/) |
+| 71 | Word Search II | 🚧 Pending |
+
+### Backtracking
+
+| #  | Problem | Solution |
+|----|---------|----------|
+| 48 | Word Search | 🚧 Pending |
 
 ### Dynamic Programming
 
@@ -80,11 +101,13 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 | 15 | Climbing Stairs | [climbing_stairs.py](15-climbing-stairs/) |
 | 16 | Coin Change | [coin_change.py](16-coin-change/) |
 | 17 | Longest Increasing Subsequence | [lis.py](17-longest-increasing-subsequence/) |
+| 18 | Longest Common Subsequence | 🚧 Pending |
 | 19 | Word Break | [word_break.py](19-word-break/) |
 | 20 | Combination Sum | [combination_sum.py](20-combination-sum/) |
 | 21 | House Robber & House Robber II | [house_robber.py](21-house-robber-and-2/) |
 | 22 | Longest Palindromic Substring | [longest_palindromic_substring.py](22-longest-palindromic-substring/) |
-| 23 | Palindromic Substrings | [palindromic_substrings.py](23-palindromic-substrings/) |
+| 23 | Decode Ways | 🚧 Pending |
+| 56 | Palindromic Substrings | [palindromic_substrings.py](56-palindromic-substrings/) |
 
 ### Bit Manipulation
 
@@ -103,6 +126,7 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 | 34 | Insert Interval | [insert_interval.py](34-insert-interval/) |
 | 35 | Merge Intervals | [merge_intervals.py](35-merge-intervals/) |
 | 37 | Meeting Rooms | [meeting_rooms.py](37-meeting-rooms/) |
+| 38 | Meeting Rooms II | 🚧 Pending |
 
 ## How to Run
 
