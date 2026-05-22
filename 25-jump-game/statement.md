@@ -1,4 +1,4 @@
-# 18. Jump Game / Juego de Saltos
+# 25. Jump Game / Juego de Saltos
 
 ## English
 
