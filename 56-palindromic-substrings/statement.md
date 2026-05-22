@@ -1,4 +1,4 @@
-# 23. Palindromic Substrings / Subcadenas Palindromas
+# 56. Palindromic Substrings / Subcadenas Palindromas
 
 ## English
 
