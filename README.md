@@ -2,7 +2,7 @@
 
 Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-75/) problem list in Python 3.
 
-**Progress:** 46 / 75 — 🚧 marks problems with the statement ready but the solution still pending.
+**Progress:** 47 / 75 — 🚧 marks problems with the statement ready but the solution still pending.
 
 **Live site:** [ariana0505.github.io/leetcode75-python](https://ariana0505.github.io/leetcode75-python) — browse problems with syntax-highlighted code, bilingual statements (EN/ES), and keyboard navigation.
 
@@ -107,6 +107,7 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 | 21 | House Robber & House Robber II | [house_robber.py](21-house-robber-and-2/) |
 | 22 | Longest Palindromic Substring | [longest_palindromic_substring.py](22-longest-palindromic-substring/) |
 | 23 | Decode Ways | 🚧 Pending |
+| 25 | Jump Game | [jump_game.py](25-jump-game/) |
 | 56 | Palindromic Substrings | [palindromic_substrings.py](56-palindromic-substrings/) |
 
 ### Bit Manipulation
