@@ -2,7 +2,7 @@
 
 Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-75/) problem list in Python 3.
 
-**Progress:** 47 / 75 — 🚧 marks problems with the statement ready but the solution still pending.
+**Progress:** 50 / 75 — 🚧 marks problems with the statement ready but the solution still pending.
 
 **Live site:** [ariana0505.github.io/leetcode75-python](https://ariana0505.github.io/leetcode75-python) — browse problems with syntax-highlighted code, bilingual statements (EN/ES), and keyboard navigation.
 
@@ -41,7 +41,7 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 
 | #  | Problem | Solution |
 |----|---------|----------|
-| 54 | Valid Palindrome | 🚧 Pending |
+| 54 | Valid Palindrome | [valid_palindrome.py](54-valid-palindrome/) |
 
 ### Binary Search
 
@@ -63,7 +63,7 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 
 | #  | Problem | Solution |
 |----|---------|----------|
-| 53 | Valid Parentheses | 🚧 Pending |
+| 53 | Valid Parentheses | [valid_parentheses.py](53-valid-parentheses/) |
 
 ### Tree
 
@@ -127,7 +127,7 @@ Solutions to the curated [LeetCode 75](https://leetcode.com/studyplan/leetcode-7
 | 34 | Insert Interval | [insert_interval.py](34-insert-interval/) |
 | 35 | Merge Intervals | [merge_intervals.py](35-merge-intervals/) |
 | 37 | Meeting Rooms | [meeting_rooms.py](37-meeting-rooms/) |
-| 38 | Meeting Rooms II | 🚧 Pending |
+| 38 | Meeting Rooms II | [meeting_rooms_ii.py](38-meeting-rooms-ii/) |
 
 ## How to Run
 
