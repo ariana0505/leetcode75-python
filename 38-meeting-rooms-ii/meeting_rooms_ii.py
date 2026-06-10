@@ -8,7 +8,7 @@ i =  0
 f = 0
 salas_max_alcanzado  = 0 
 salas_max_ahora = 0
-
+#si un inicio entra suma  1, si un final   entra resta  1 
 while i < len(intervalos):
     if inicios[i] < finales[f]:
         salas_max_ahora +=1
