@@ -1,20 +1,22 @@
-class  ListNode:
-    def __init__(self,val,next  = None):
-        self.val = val
+class  listNode:
+    def  __init__(self, val, next = None):
+        self.val   = val
         self.next =  next
 
-lista = ListNode(1,ListNode(2,ListNode(3,ListNode(4))))
 
-head =  lista
-prev  =  None
+lista =  listNode(1,listNode(2,listNode(3,listNode(4))))
+prev  = None
+
+head = lista
+
 while head != None:
     temp = head.next
-    head.next = prev
+    head.next  = prev
     prev = head
     head = temp
 
-imprimir = prev
+imprimir   = prev
 
-while imprimir:
-    print(imprimir.val ,  end="->")
+while imprimir != None:
+    print(imprimir.val,end="->")
     imprimir = imprimir.next
