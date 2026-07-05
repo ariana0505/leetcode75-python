@@ -1,19 +1,19 @@
-from  collections   import deque
-s = "([])"
+from collections import deque
+s = "()[]{}"
 
-pila  =  deque()
-
-diccionario = {"]":"[",
+pila =  deque()
+diccinario  = {")":"(",
                "}":"{",
-               ")":"("}
+               "]":"["
+               }
 
-for simbol in s:
-    if simbol in diccionario.keys():
-        if pila and diccionario[simbol]  == pila.pop() :
+for  simbol in s:
+    if simbol  in diccinario.keys():
+        if pila and diccinario[simbol]  == pila.pop():
             pass
         else:
             print(False)
-            break 
+            break
     else:
         pila.append(simbol)
     
