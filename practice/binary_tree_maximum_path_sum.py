@@ -1,21 +1,25 @@
-class Treenode:
-    def __init__(self,  val , izq=None , der = None):
-        self.val  =  val
+class TreeNode:
+    def __init__(self, val, izq=None, der=None):
+        self.val = val
         self.izq = izq
-        self.der  = der
+        self.der = der
 
-arbol = Treenode(-10,Treenode(9),Treenode(20,Treenode(15),Treenode(7)))
-raiz  = arbol
-maximo = float('-inf')
-def  maximun_sum(node):
-    global maximo
-    if node is None:
-        return 0
-    izq = max(maximun_sum(node.izq),0)
-    der = max(maximun_sum(node.der),0)
 
-    maximo = max(maximo,node.val + izq + der)
-    return node.val + max(izq,der)
+def max_path_sum(raiz):
+    maximo = float('-inf')
 
-maximun_sum(raiz)
-print(maximo)
+    def gain(node):
+        nonlocal maximo
+        if node is None:
+            return 0
+        izq = max(gain(node.izq), 0)
+        der = max(gain(node.der), 0)
+        maximo = max(maximo, node.val + izq + der)
+        return node.val + max(izq, der)
+
+    gain(raiz)
+    return maximo
+
+
+arbol = TreeNode(-10, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))
+print(max_path_sum(arbol))
