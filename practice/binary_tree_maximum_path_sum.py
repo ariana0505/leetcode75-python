@@ -4,22 +4,18 @@ class TreeNode:
         self.izq = izq
         self.der = der
 
-
-def max_path_sum(raiz):
-    maximo = float('-inf')
-
-    def gain(node):
-        nonlocal maximo
-        if node is None:
-            return 0
-        izq = max(gain(node.izq), 0)
-        der = max(gain(node.der), 0)
-        maximo = max(maximo, node.val + izq + der)
-        return node.val + max(izq, der)
-
-    gain(raiz)
-    return maximo
-
-
 arbol = TreeNode(-10, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))
-print(max_path_sum(arbol))
+raiz =  arbol
+maximo = float('-inf')
+
+def  maximum_path_sum(node):
+    global  maximo
+    if node == None:
+        return 0
+    izq = max(maximum_path_sum(node.izq),0)
+    der = max(maximum_path_sum(node.der),0)
+    maximo  = max(maximo,  node.val+izq+der)
+    return node.val + max(der,izq)
+
+maximum_path_sum(raiz)
+print(maximo)
