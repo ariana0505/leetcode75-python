@@ -35,5 +35,8 @@ for r in range(filas):
     for c in range(columnas):
         if dfs(r, c, 0):
             resultado = True
+            break
+    if resultado:
+        break
 
 print(resultado)
