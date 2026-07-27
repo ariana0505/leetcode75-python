@@ -1,6 +1,5 @@
-from typing import List
 
-def findMin(nums: List[int]) -> int:
+def findMin(nums: list[int]) -> int:
     left: int = 0
     right: int = len(nums) - 1
 
