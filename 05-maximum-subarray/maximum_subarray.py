@@ -1,6 +1,5 @@
-from typing import List
 
-nums: List[int] = [-2,1,-3,4,-1,2,1,-5,4]
+nums: list[int] = [-2,1,-3,4,-1,2,1,-5,4]
 max_sum: int = nums[0]
 current_sum: int = nums[0]
 
