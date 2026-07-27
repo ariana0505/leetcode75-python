@@ -1,6 +1,5 @@
-from typing import List
 
-days: List[int] = [5, 7, 2, 1, 7]
+days: list[int] = [5, 7, 2, 1, 7]
 profit: int = 0
 buy: int
 sell: int
