@@ -1,10 +1,9 @@
-from typing import List
 
 # rob1: max money robbed up to house i-2
 # rob2: max money robbed up to house i-1
 rob1: int = 0
 rob2: int = 0
-houses: List[int] = [2, 7, 9, 3, 1]
+houses: list[int] = [2, 7, 9, 3, 1]
 
 for money in houses:
     # Option 1: rob this house -> money + rob1
