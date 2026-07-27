@@ -1,6 +1,5 @@
-from typing import List
 
-nums: List[int] = [4,5,6,7,0,1,2]
+nums: list[int] = [4,5,6,7,0,1,2]
 target: int = 8
 l: int = 0
 r: int = len(nums) - 1
