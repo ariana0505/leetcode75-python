@@ -1,15 +1,14 @@
-from typing import List
 
 
-def encode(strs: List[str]) -> str:
+def encode(strs: list[str]) -> str:
     res: str = ""
     for word in strs:
         res += str(len(word)) + "#" + word
     return res
 
 
-def decode(strg: str) -> List[str]:
-    res: List[str] = []
+def decode(strg: str) -> list[str]:
+    res: list[str] = []
     i: int = 0
 
     while i < len(strg):
