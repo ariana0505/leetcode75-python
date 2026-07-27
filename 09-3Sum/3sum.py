@@ -1,7 +1,6 @@
-from typing import List
 
-nums: List[int] = [-1,0,1,2,-1,-4]
-answer: List[List[int]] = []
+nums: list[int] = [-1,0,1,2,-1,-4]
+answer: list[list[int]] = []
 nums.sort()
 for i, v in enumerate(nums):
     # Skip duplicate values for the first element
