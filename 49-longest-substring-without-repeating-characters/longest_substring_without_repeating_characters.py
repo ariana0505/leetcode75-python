@@ -1,7 +1,6 @@
-from typing import Dict
 
 s: str = "abcabcbb"
-seen_chars: Dict[str, int] = {}
+seen_chars: dict[str, int] = {}
 max_substring: int = 0
 l: int = 0
 
