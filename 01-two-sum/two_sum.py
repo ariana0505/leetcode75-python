@@ -1,7 +1,6 @@
-from typing import List
 
 class Solution:
-    def two_sum(self, nums: List[int], target: int) -> List[int]:
+    def two_sum(self, nums: list[int], target: int) -> list[int]:
         hash_map: dict[int, int] = {}  # stores num -> index
 
         for i, num in enumerate(nums):
