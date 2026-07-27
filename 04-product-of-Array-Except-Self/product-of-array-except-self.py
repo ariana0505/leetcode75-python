@@ -1,9 +1,8 @@
-from typing import List
 
 class Solution:
-    def productExceptSelf(self, nums: List[int]) -> List[int]:
+    def productExceptSelf(self, nums: list[int]) -> list[int]:
         n: int = len(nums)
-        answer: List[int] = [1] * n  # final result
+        answer: list[int] = [1] * n  # final result
 
         # Step 1: compute prefix products (left to right)
         prefix: int = 1
