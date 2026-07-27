@@ -1,7 +1,6 @@
-from typing import List
 
 
-def rob_linear(nums: List[int]) -> int:
+def rob_linear(nums: list[int]) -> int:
     # House Robber 1: linear algorithm
     rob1, rob2 = 0, 0
     for money in nums:
@@ -11,7 +10,7 @@ def rob_linear(nums: List[int]) -> int:
     return rob2
 
 
-houses: List[int] = [2, 7, 9, 3, 1]
+houses: list[int] = [2, 7, 9, 3, 1]
 
 # Break the circle into two lines
 # Line 1: houses[0 ... n-2] (include first, exclude last)
