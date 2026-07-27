@@ -1,7 +1,6 @@
-from typing import List
 
 # Find the missing number in [0..n] using XOR
-nums: List[int] = [9, 6, 4, 2, 3, 5, 7, 0, 1]
+nums: list[int] = [9, 6, 4, 2, 3, 5, 7, 0, 1]
 ans: int = 0
 
 # XOR all indices from 0 to n
