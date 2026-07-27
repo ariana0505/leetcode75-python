@@ -1,9 +1,8 @@
-from typing import Dict, List
 
 k: int = 2  # Number of most frequent elements to find
-nums: List[int] = [1, 1, 1, 2, 2, 3]
-freq: List[List[int]] = [[] for i in range(len(nums) + 1)]
-count: Dict[int, int] = {}
+nums: list[int] = [1, 1, 1, 2, 2, 3]
+freq: list[list[int]] = [[] for i in range(len(nums) + 1)]
+count: dict[int, int] = {}
 
 for num in nums:
     count[num] = 1 + count.get(num, 0)
@@ -12,7 +11,7 @@ for num in nums:
 for n, c in count.items():  # (1,3), (2,2), (3,1) -> number, frequency
     freq[c].append(n)  # freq = [[], [3], [2], [1], [], [], []]
 
-res: List[int] = []
+res: list[int] = []
 for i in range(len(freq) - 1, 0, -1):
     for n in freq[i]:
         res.append(n)
