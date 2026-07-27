@@ -1,8 +1,7 @@
-from typing import Dict, List
 
 # Hash map approach
-def containsDuplicateWithHashMap(nums: List[int]) -> bool:
-    hash_map: Dict[int, int] = {}
+def containsDuplicateWithHashMap(nums: list[int]) -> bool:
+    hash_map: dict[int, int] = {}
     for i, v in enumerate(nums):
         if v in hash_map:
             return True
@@ -10,7 +9,7 @@ def containsDuplicateWithHashMap(nums: List[int]) -> bool:
     return False
 
 # Optimal approach using a set (faster lookups, no index storage)
-def containsDuplicateWithSet(nums: List[int]) -> bool:
+def containsDuplicateWithSet(nums: list[int]) -> bool:
     hashset: set[int] = set()
     for n in nums:
         if n in hashset:
