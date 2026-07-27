@@ -1,10 +1,9 @@
-from typing import List
 
 # Input values
-intervals: List[List[int]] = [[1, 3], [6, 9]]
-newInterval: List[int] = [2, 5]
+intervals: list[list[int]] = [[1, 3], [6, 9]]
+newInterval: list[int] = [2, 5]
 
-res: List[List[int]] = []
+res: list[list[int]] = []
 
 for i in range(len(intervals)):
     if newInterval[1] < intervals[i][0]:  # No overlap, new interval comes before
