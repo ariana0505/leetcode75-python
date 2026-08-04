@@ -1,36 +1,33 @@
 import heapq
-
 class ListNode:
-    def __init__(self, val=0, next = None):
+    def __init__(self,val=0, next = None):
         self.val = val
         self.next = next
 
-list1 = ListNode(1,ListNode(3,ListNode(5)))
-list2 = ListNode(3,ListNode(4,ListNode(7)))
-list3 = ListNode(4,ListNode(6,ListNode(8)))
-lists = [list1,list2,list3]
+lista1 = ListNode(1,ListNode(4,ListNode(5)))
+lista2 = ListNode(1,ListNode(3,ListNode(4)))
+lista3 = ListNode(2,ListNode(6))
 
-heap = heapq
+listas = [lista1, lista2,lista3]
 heap = []
-
 dummy = ListNode()
-cola = dummy
-
-
-for i,lista in enumerate(lists):
-    if lista:
-        heapq.heappush(heap,(lista.val, i , lista))
+tail = dummy
+#(lista.val, next , lista)
+for i, lista in enumerate(listas):
+    heapq.heappush(heap,(lista.val, i , lista))
 
 while heap:
     extraido = heapq.heappop(heap)
     val , i , nodo = extraido
-    cola.next = nodo
-    cola = cola.next
     if nodo.next:
-        heapq.heappush(heap, (nodo.next.val, i , nodo.next))
+        heapq.heappush(heap,(nodo.next.val, i , nodo.next))
+    tail.next = nodo
+    tail = tail.next
 
-recorrer = dummy.next
+resultado = dummy.next
 
-while recorrer:
-    print(recorrer.val , end="->")
-    recorrer = recorrer.next
+cur = resultado
+while cur:
+    print(cur.val, end="->")
+    cur = cur.next
+print("None")
