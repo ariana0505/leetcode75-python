@@ -10,7 +10,7 @@ visitados = set()
 
 def valid(nodo):
     if nodo in visitados:
-        return False
+        return 
     visitados.add(nodo)
     for vecino in lista_ady[nodo]:
         valid(vecino)
