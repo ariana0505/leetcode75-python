@@ -1,5 +1,5 @@
 n = 5
-edges = [[0,1],[1,2],[3,4]]
+edges = [[0,1],[1,2],[2,3],[3,4]]
 lista_ady = [[] for _ in range(n)]
 
 for a,b in edges:
@@ -8,16 +8,16 @@ for a,b in edges:
 
 visitados = set()
 
-def dfs(nodo):
+def connected(nodo):
     if nodo in visitados:
         return
     visitados.add(nodo)
-
     for vecino in lista_ady[nodo]:
-        dfs(vecino)
+        connected(vecino)
+componente = 0
+for i in range(n):
+    if i not in visitados:
+        connected(i)
+        componente += 1
 
-contador = 0
-for nodo in range(0, n):
-    if nodo not in visitados:
-        contador += 1
-        dfs(nodo)
+print(componente)

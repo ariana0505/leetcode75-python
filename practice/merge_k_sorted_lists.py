@@ -8,26 +8,24 @@ lista1 = ListNode(1,ListNode(4,ListNode(5)))
 lista2 = ListNode(1,ListNode(3,ListNode(4)))
 lista3 = ListNode(2,ListNode(6))
 
-listas = [lista1, lista2,lista3]
+listas = [lista1,lista2,lista3]
+
 heap = []
 dummy = ListNode()
 tail = dummy
-#(lista.val, next , lista)
-for i, lista in enumerate(listas):
-    heapq.heappush(heap,(lista.val, i , lista))
+for i,lista in enumerate(listas):
+    if lista:
+        heapq.heappush(heap , (lista.val, i,lista))
 
 while heap:
     extraido = heapq.heappop(heap)
-    val , i , nodo = extraido
-    if nodo.next:
-        heapq.heappush(heap,(nodo.next.val, i , nodo.next))
+    val, i , nodo = extraido
     tail.next = nodo
     tail = tail.next
+    if nodo.next:
+        heapq.heappush(heap, (nodo.next.val, i, nodo.next))
 
-resultado = dummy.next
-
-cur = resultado
-while cur:
-    print(cur.val, end="->")
-    cur = cur.next
-print("None")
+respuesta = dummy.next
+while respuesta:
+    print(respuesta.val,end="->")
+    respuesta= respuesta.next
