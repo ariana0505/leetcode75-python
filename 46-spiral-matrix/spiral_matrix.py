@@ -19,4 +19,16 @@ while top <= bottom and izq <= der:
 
     der -= 1
 
-# FALTA RESOLVER
+    if top <= bottom:
+        # recorre la fila bottom de derecha a izquierda
+        for col in range(der, izq - 1, -1):
+            result.append(matrix[bottom][col])
+        bottom -= 1
+
+    if izq <= der:
+        # sube de bottom a top por la columna izq
+        for fila in range(bottom, top - 1, -1):
+            result.append(matrix[fila][izq])
+        izq += 1
+
+print(result)
