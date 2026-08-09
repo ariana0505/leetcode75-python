@@ -1,10 +1,7 @@
-nums = [3, 0, 1, 0, 2]
-ceros = 0
-respuesta = []
-for num in nums:
-    if num == 0:
-        ceros += 1
-    else:
-        respuesta.append(num)
-
-print(respuesta + [0] * ceros)
+nums = [0, 1, 0, 3, 12]
+izq = 0  # siguiente posicion donde colocar un no-cero
+for der in range(len(nums)):
+    if nums[der] != 0:
+        nums[izq],nums[der] = nums[der], nums[izq]
+        izq += 1
+print(nums)
