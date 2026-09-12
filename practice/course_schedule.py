@@ -1,33 +1,43 @@
 cursos = 2
 requisitos = [[1, 0], [0, 1]]
-grafo = [[] for _ in range(cursos)] # por cada curso crea una lista vacia que tendra los requisitos 
+# Paso 1: crea una lista de requisitos para cada curso.
+grafo = [[] for _ in range(cursos)]
 
-for curso , requisito in requisitos: # por
+# Paso 2: conecta cada curso con los cursos que debe completar antes.
+for curso , requisito in requisitos:
     grafo[curso].append(requisito)
 print(grafo)
 
+# `visitados` sigue la ruta actual; `terminados` guarda cursos ya validados.
 visitados = set()
 terminados = set()
 
 def revisar_curso(curso):
-    if curso in visitados: # lo estamos revisando otra vez: hay ciclo
+    # Paso 3: si reaparece en la ruta actual, encontramos un ciclo.
+    if curso in visitados:
         return False
 
-    if curso in terminados: # ya fue revisado y sabemos que está bien
+    # Un curso terminado no necesita volver a recorrerse.
+    if curso in terminados:
         return True
 
-    visitados.add(curso) # empezamos a revisar sus requisitos
+    # Marca el curso como parte de la ruta que estamos explorando.
+    visitados.add(curso)
 
-    for requisito in grafo[curso]: # reviso i : [req1, req2]
+    # Paso 4: valida recursivamente todos sus requisitos.
+    for requisito in grafo[curso]:
         resultado = revisar_curso(requisito)
         if resultado == False:
             return False
+
+    # Al terminar la rama, quita el curso de la ruta y memoriza el resultado.
     visitados.remove(curso)
     terminados.add(curso)
     return True
 
+# Paso 5: comprueba cada curso para cubrir también grafos desconectados.
 for curso in range(cursos):
-    if not revisar_curso(curso): # entra si se encuentra bucle o no se puede hacer
+    if not revisar_curso(curso):
         print(False)
         break
 else:
