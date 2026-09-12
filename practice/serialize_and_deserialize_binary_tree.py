@@ -1,45 +1,46 @@
-class tree:
-    def __init__(self, val , izq = None, der = None):
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
         self.val = val
-        self.izq = izq
-        self.der = der
+        self.left = left
+        self.right = right
 
 
-# Arbol del ejemplo 1: [4,2,7,1,3,6,9]
-root = tree(4)
-root.izq = tree(2)
-root.der = tree(7)
-root.izq.izq = tree(1)
-root.izq.der = tree(3)
-root.der.izq = tree(6)
-root.der.der = tree(9)
+# Ejemplo 1: k=1 -> esperado: 1
+#     3
+#    / \
+#   1   4
+#    \
+#     2
+node2 = TreeNode(2)
+node1 = TreeNode(1, right=node2)
+node4 = TreeNode(4)
+node3 = TreeNode(3, left=node1, right=node4)
 
-cabeza = root
-def serialize(root):
-    valores = []
-
+def serializar(nodo:TreeNode,):
+    lista = []
     def recorrer(nodo):
         if nodo is None:
-            valores.append("N")
-            return
-        valores.append(str(nodo.val))
-        recorrer(nodo.izq)
-        recorrer(nodo.der)
-    recorrer(root)
-    return ",".join(valores)
+            lista.append("N")
+            return 
+        lista.append(str(nodo.val))
 
-def deserialize(datos):
-    valores = iter(datos.split(","))
-    def construir():
-          valor = next(valores)
+        recorrer(nodo.left)
+        recorrer(nodo.right)
+    
+    recorrer(nodo)
+    return ",".join(lista)
 
-          if valor == "N":
-              return None
+def deserializacion(texto:str):
+    valores = iter(texto.split(","))
 
-          nodo = tree(int(valor))
-          nodo.izq = construir()
-          nodo.der = construir()
+    def recorrer():
+        valor = next(valores)
 
-          return nodo
+        if valor == "N":
+            return None
 
-    return construir()
+        nodo = TreeNode(int(valor))
+        nodo.left = recorrer()
+        nodo.right = recorrer()
+        return nodo
+    return recorrer()
