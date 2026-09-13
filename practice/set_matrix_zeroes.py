@@ -1,25 +1,18 @@
-matrix = [[1,1,1],[1,0,1],[1,1,1]]
-
-# Primero obtenemos las dimensiones para poder recorrer toda la matriz.
+matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
 filas = len(matrix)
 columnas = len(matrix[0])
 
-# Guardamos por separado las filas y columnas que contienen un cero original.
-filas_zero = set()
-columnas_zero = set()
+filas_zeros = set()
+columnas_zeros = set()
 
-# En el primer recorrido solo registramos posiciones; todavía no modificamos la matriz.
 for fila in range(filas):
     for columna in range(columnas):
-        if matrix[fila][columna] == 0:
-            filas_zero.add(fila)
-            columnas_zero.add(columna)
+        if matrix[fila][columna] == 0 :
+            filas_zeros.add(fila)
+            columnas_zeros.add(columna)
 
-# En el segundo recorrido ponemos a cero cada celda cuya fila o columna fue marcada.
 for fila in range(filas):
     for columna in range(columnas):
-        if fila in filas_zero or columna in columnas_zero:
+        if fila in filas_zeros or columna in columnas_zeros:
             matrix[fila][columna] = 0
 
-# Mostramos la matriz una vez aplicadas todas las marcas.
-print(matrix)
