@@ -14,12 +14,11 @@ root.izq.der = tree(3)
 root.der.izq = tree(6)
 root.der.der = tree(9)
 
-def invert(node: tree):
+def invert(node: tree | None) -> tree | None:
     if node is None:
-        return
-    temp = node.izq
-    node.izq = node.der
-    node.der = temp
+        return None
+    node.izq, node.der = node.der, node.izq
 
-    invert(node.der)
     invert(node.izq)
+    invert(node.der)
+    return node

@@ -1,39 +1,53 @@
-board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]]
-words = ["oath","pea","eat","rain"]
-
-filas  = len(board)
-columnas  = len(board[0])
-
-def dfs(r,c,k):
-    if len(word) ==  k:
-        return True
-    if r < 0 or  r >= filas or c<0 or c>= columnas:
-        return False
-    if board[r][c] == "#":
-        return False
-    if board[r][c] !=  word[k]:
-        return False
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.word = None
 
 
-    temp =  board[r][c]
-    board[r][c] =  "#"
+def find_words(board: list[list[str]], words: list[str]) -> list[str]:
+    if not board or not board[0] or not words:
+        return []
 
-    encontrado = (dfs(r + 1,c,k+1) or dfs(r-1,c,k+1) or dfs(r,c+1,k+1) or  dfs(r,c-1,k+1))
+    root = TrieNode()
+    for word in words:
+        node = root
+        for char in word:
+            node = node.children.setdefault(char, TrieNode())
+        node.word = word
 
-    board[r][c] = temp
+    rows, cols = len(board), len(board[0])
+    result = []
 
-    return encontrado
+    def search(row: int, col: int, node: TrieNode) -> None:
+        char = board[row][col]
+        next_node = node.children.get(char)
+        if next_node is None:
+            return
 
-resultado  = []
+        if next_node.word is not None:
+            result.append(next_node.word)
+            next_node.word = None
 
-for w in words:
-    word = w
-    encontrada = False
-    for r  in range(filas):
-        for  c in range(columnas):
-            if dfs(r,c,0):
-                encontrada = True
-    if encontrada:
-        resultado.append(w)
+        board[row][col] = "#"
+        for row_delta, col_delta in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            next_row = row + row_delta
+            next_col = col + col_delta
+            if 0 <= next_row < rows and 0 <= next_col < cols:
+                if board[next_row][next_col] != "#":
+                    search(next_row, next_col, next_node)
+        board[row][col] = char
 
-print(resultado)
+        if not next_node.children and next_node.word is None:
+            del node.children[char]
+
+    for row in range(rows):
+        for col in range(cols):
+            search(row, col, root)
+    return result
+
+
+if __name__ == "__main__":
+    board = [["o", "a", "a", "n"], ["e", "t", "a", "e"], ["i", "h", "k", "r"], ["i", "f", "l", "v"]]
+    words = ["oath", "pea", "eat", "rain"]
+    assert set(find_words(board, words)) == {"oath", "eat"}
+    print(find_words(board, words))

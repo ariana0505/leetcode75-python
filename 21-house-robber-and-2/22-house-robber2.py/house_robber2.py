@@ -1,20 +1,22 @@
 
 
 def rob_linear(nums: list[int]) -> int:
-    # House Robber 1: linear algorithm
     rob1, rob2 = 0, 0
     for money in nums:
-        temp: int = max(money + rob1, rob2)
-        rob1 = rob2
-        rob2 = temp
+        rob1, rob2 = rob2, max(money + rob1, rob2)
     return rob2
 
 
-houses: list[int] = [2, 7, 9, 3, 1]
+def rob(nums: list[int]) -> int:
+    if not nums:
+        return 0
+    if len(nums) == 1:
+        return nums[0]
+    return max(rob_linear(nums[:-1]), rob_linear(nums[1:]))
 
-# Break the circle into two lines
-# Line 1: houses[0 ... n-2] (include first, exclude last)
-# Line 2: houses[1 ... n-1] (exclude first, include last)
 
-result: int = max(rob_linear(houses[:-1]), rob_linear(houses[1:]))
-print(result)
+if __name__ == "__main__":
+    houses = [2, 7, 9, 3, 1]
+    assert rob(houses) == 11
+    assert rob([5]) == 5
+    print(rob(houses))

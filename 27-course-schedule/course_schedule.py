@@ -1,71 +1,28 @@
-# Cantidad total de cursos
-numCourses = 2
-
-# [curso, requisito]
-# Para realizar el curso 1, primero necesito completar el curso 0
-prerequisites = [[1, 0], [0, 1]]
+from collections import deque
 
 
-# Crea una lista vacía para guardar los requisitos de cada curso
-# Con 2 cursos inicialmente tenemos: [[], []]
-grafo = [[] for _ in range(numCourses)]
+def can_finish(num_courses: int, prerequisites: list[list[int]]) -> bool:
+    graph = [[] for _ in range(num_courses)]
+    indegree = [0] * num_courses
+
+    for course, prerequisite in prerequisites:
+        graph[prerequisite].append(course)
+        indegree[course] += 1
+
+    ready = deque(course for course, degree in enumerate(indegree) if degree == 0)
+    completed = 0
+    while ready:
+        course = ready.popleft()
+        completed += 1
+        for next_course in graph[course]:
+            indegree[next_course] -= 1
+            if indegree[next_course] == 0:
+                ready.append(next_course)
+
+    return completed == num_courses
 
 
-# Construimos el grafo
-for curso, requisito in prerequisites:
-    # Guardamos qué requisito necesita cada curso
-    grafo[curso].append(requisito)
-
-
-# Cursos que forman parte del recorrido DFS actual
-# Si volvemos a encontrar uno de estos cursos, existe un ciclo
-proceso = set()
-
-# Cursos que ya revisamos completamente y sabemos que son seguros
-terminados = set()
-
-
-def revisar(curso):
-      # Si encontramos nuevamente un curso del recorrido actual,
-      # significa que regresamos al mismo punto y existe un ciclo
-      if curso in proceso:
-          return False
-
-      # Si el curso ya fue revisado completamente,
-      # no necesitamos volver a revisar sus requisitos
-      if curso in terminados:
-          return True
-
-      # Marcamos que estamos comenzando a revisar este curso
-      proceso.add(curso)
-
-      # Recorremos todos los requisitos del curso actual
-      for requisito in grafo[curso]:
-
-          # Revisamos recursivamente cada requisito
-          # Si alguno tiene un ciclo, este curso tampoco puede completarse
-          if not revisar(requisito):
-              return False
-
-      # Terminamos de revisar el curso, así que lo retiramos
-      # de la ruta DFS actual
-      proceso.remove(curso)
-
-      # Lo guardamos como completamente revisado y seguro
-      terminados.add(curso)
-
-      return True
-
-
-  # Debemos comprobar todos los cursos, porque el grafo
-  # puede tener varias partes separadas
-for curso in range(numCourses):
-
-    # Si algún curso contiene un ciclo, no podemos terminarlos todos
-    if not revisar(curso):
-        print(False)
-        break
-else:
-    # Este else pertenece al for y se ejecuta únicamente
-    # cuando el ciclo termina sin ejecutar break
-    print(True)
+if __name__ == "__main__":
+    assert can_finish(2, [[1, 0]])
+    assert not can_finish(2, [[1, 0], [0, 1]])
+    print(False)

@@ -1,34 +1,37 @@
 class ListNode:
-    def __init__(self, val, next = None):
+    def __init__(self, val: int, next=None):
         self.val = val
         self.next = next
 
-node =  ListNode(4)
-node2 = ListNode(5)
-node3 = ListNode(8)
-node4 = ListNode(2)
 
-node.next = node2
-node2.next =   node3
-node3.next =  node4
+def remove_nth_from_end(head: ListNode | None, n: int) -> ListNode | None:
+    dummy = ListNode(0, head)
+    fast = dummy
+    slow = dummy
 
-fast = node
-slow = node
+    for _ in range(n):
+        fast = fast.next
 
-n = 2
+    while fast and fast.next:
+        fast = fast.next
+        slow = slow.next
 
-for _ in  range(n):
-    fast  =  fast.next
+    if slow.next:
+        slow.next = slow.next.next
+    return dummy.next
 
-while not fast.next == None:
-    fast =  fast.next
-    slow = slow.next
 
-slow.next   =  slow.next.next
+def values(head: ListNode | None) -> list[int]:
+    result = []
+    while head:
+        result.append(head.val)
+        head = head.next
+    return result
 
-cur  = node
 
-while cur:
-    print(cur.val , end="->")
-    cur  = cur.next
-    
+if __name__ == "__main__":
+    head = ListNode(4, ListNode(5, ListNode(8, ListNode(2))))
+    assert values(remove_nth_from_end(head, 2)) == [4, 5, 2]
+    head = ListNode(5, ListNode(8, ListNode(2)))
+    assert values(remove_nth_from_end(head, 3)) == [8, 2]
+    print("4->5->2")

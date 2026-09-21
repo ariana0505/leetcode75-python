@@ -1,15 +1,19 @@
-from functools import lru_cache
+def longest_common_subsequence(text1: str, text2: str) -> int:
+    if len(text1) < len(text2):
+        text1, text2 = text2, text1
 
-text1 = "abcde"
-text2 = "ace"
+    previous = [0] * (len(text2) + 1)
+    for char1 in text1:
+        current = [0]
+        for index, char2 in enumerate(text2, start=1):
+            if char1 == char2:
+                current.append(previous[index - 1] + 1)
+            else:
+                current.append(max(previous[index], current[-1]))
+        previous = current
+    return previous[-1]
 
 
-@lru_cache
-def lcs(i,j):
-    if i == len(text1)  or j ==len(text2):
-        return 0
-    if text1[i] == text2[j]:
-        return 1 +  lcs(i+1,j+1)
-    else:
-        return  max(lcs(i+ 1,j),lcs(i,j+1))
-print(lcs(0,0))
+if __name__ == "__main__":
+    assert longest_common_subsequence("abcde", "ace") == 3
+    print(3)

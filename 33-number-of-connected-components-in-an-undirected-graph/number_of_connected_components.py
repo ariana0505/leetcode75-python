@@ -1,22 +1,26 @@
-n = 5
-edges = [[0,1],[1,2],[3,4]]
+def count_components(n: int, edges: list[list[int]]) -> int:
+    graph = [[] for _ in range(n)]
+    for first, second in edges:
+        graph[first].append(second)
+        graph[second].append(first)
 
-lista_ady = [[] for _ in range(n)]
-for a, b in edges:
-    lista_ady[a].append(b)
-    lista_ady[b].append(a)
+    visited = set()
+    components = 0
+    for node in range(n):
+        if node in visited:
+            continue
+        components += 1
+        visited.add(node)
+        stack = [node]
+        while stack:
+            current = stack.pop()
+            for neighbor in graph[current]:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    stack.append(neighbor)
+    return components
 
-componentes = 0
-visitados = set()
-def dfs(nodo):
-    visitados.add(nodo)
-    for vecino in lista_ady[nodo]:
-        if vecino not in visitados:
-            dfs(vecino)
 
-for nodo in range(n):
-    if nodo not in visitados:
-        componentes += 1
-        dfs(nodo)
-
-print(componentes)
+if __name__ == "__main__":
+    assert count_components(5, [[0, 1], [1, 2], [3, 4]]) == 2
+    print(2)

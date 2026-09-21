@@ -1,20 +1,24 @@
-n = 5
-edges = [[0,1],[0,2],[0,3],[1,4]]
-visitados = set()
-list_ady = [[] for _ in range(n)]
-for a,b in edges:
-    list_ady[a].append(b)
-    list_ady[b].append(a)
+def valid_tree(n: int, edges: list[list[int]]) -> bool:
+    if len(edges) != n - 1:
+        return False
 
-def graphValidTree(nodo):
-    if nodo in visitados:
-        return
-    visitados.add(nodo)
-    for vecino in list_ady[nodo]:
-        graphValidTree(vecino)
+    graph = [[] for _ in range(n)]
+    for first, second in edges:
+        graph[first].append(second)
+        graph[second].append(first)
 
-if len(edges) != (n - 1):
-    print(False)
-else:
-    graphValidTree(0)
-    print(len(visitados) == n)
+    visited = {0}
+    stack = [0]
+    while stack:
+        node = stack.pop()
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                stack.append(neighbor)
+
+    return len(visited) == n
+
+
+if __name__ == "__main__":
+    assert valid_tree(5, [[0, 1], [0, 2], [0, 3], [1, 4]])
+    print(True)
