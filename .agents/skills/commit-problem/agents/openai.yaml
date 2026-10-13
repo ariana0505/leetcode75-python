@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commit Problem"
+  short_description: "Create and push one selected logical commit"
+  default_prompt: "Use $commit-problem to review my changes and commit one logical change."
